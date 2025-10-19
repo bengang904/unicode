@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="https://2024-10-24.zip/images/unicode.jpg" type="image/jpeg">
-    <title>Unicode字符库</title> 
+    <title>Unicode 字符库</title> 
     <style>
         body {
             background: #f4f4f4;
@@ -121,12 +121,14 @@
                 const div = document.createElement('div');
                 div.className = 'card';
                 div.title = label;
-                const displayChar = char.length <= 2 ? char : char.slice(0, 2);
+
+                const displayChar = char.length <= 2 ? char : char.slice(-2);
 
                 div.innerHTML = `
                     <div class="char">${displayChar}</div>
                     <div class="label">${label}</div>
                 `;
+                
                 div.onclick = () => {
                     navigator.clipboard.writeText(char).then(() => {
                         showToast('已复制：' + char);
